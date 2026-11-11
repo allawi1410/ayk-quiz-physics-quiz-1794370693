@@ -1,0 +1,721 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+" />
+<<head>
+<meta charset="UTF-
+8meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+ts.googleapis.com">
+<link rel="preconnect" href="h<title>اختبار الإتقان | English – We Can 1</title>
+<link rel="preconnect" href="https://fo
+nttps://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+g:borde<style>
+:root{
+  --navy:#0d1b33;
+  --gold:#c5a059;
+  --gold-d:#b38b4d;
+  --ink:#16233a;
+  --muted:#6b7a90;
+  --green:#1f9d55;
+  --red:#d33b3b;
+}
+*{box-sizi
+nr-box;-webkit-tap-highlight-color:transparent;}
+html{-webkit-text-size-adjust:100%;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:'Cairo',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;
+0%),
+    linear-grad  min-height:100dvh;
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(197,160,89,.22), transparent 60%),
+    radial-gradient(900px 500px at 0% 100%, rgba(35,80,160,.35), transparent 
+6ient(160deg,#0b1730 0%, #060e1d 100%);
+  color:var(--ink);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:16px;
+  padding-bottom:calc(16px + env(safe-area-inset-bottom));
+  touch-action:manipulation;
+rames fadeUp{from{opacity:0;transfo  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+.app{width:100%;max-width:720px;margin:auto 0;}
+
+/* ===== الشاشات ===== */
+.screen{display:none;}
+.screen.active{display:block;animation:fadeUp .35s ease;}
+@key
+frm:translateY(10px);}to{opacity:1;transform:none;}}
+
+/* ===== الكرت ===== */
+.card{
+  background:linear-gradient(180deg,#ffffff,#fdfaf3);
+  border-radius:22px;
+  padding:26px 20px;
+  box-shadow:0 24px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(197,160,89,.40);
+  position:relative;
+:1.32rem;font-weig  overflow:hidden;
+}
+.card::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:5px;
+  background:linear-gradient(90deg,var(--gold-d),#efe2c2,var(--gold));
+}
+
+/* ===== شاشة البداية ===== */
+.brand{display:flex;justify-content:center;margin-bottom:4px;}
+.h1{font-siz
+eht:900;text-align:center;color:var(--navy);margin:12px 0 4px;line-height:1.5;}
+.sub{text-align:center;color:var(--muted);font-size:.86rem;margin:0 0 20px;font-weight:600;}
+.field label{display:block;font-weight:800;font-size:.92rem;margin-bottom:8px;color:var(--navy);}
+.field input{
+  width:100%;font-family:inherit;font-size:16px;padding:14px 16px;border-radius:14px;
+t-weight:800;margin-top:9px;line-height:1.6;}
+.rules{list-style:none;margin:18px 0 22px;pa  border:1.6px solid #e3dccd;background:#fff;color:var(--ink);outline:none;transition:.2s;
+}
+.field input::placeholder{color:#a9b2c0;font-weight:600;}
+.field input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(197,160,89,.18);}
+.field input.err{border-color:var(--red);box-shadow:0 0 0 4px rgba(211,59,59,.12);}
+.error-msg{color:var(--red);font-size:.84rem;fo
+ndding:0;display:grid;gap:8px;}
+.rules li{
+  display:flex;gap:8px;align-items:center;font-size:.85rem;font-weight:700;color:#3d4b61;
+  background:#f7f2e7;border-radius:11px;padding:10px 13px;
+  border-inline-start:3px solid rgba(197,160,89,.65);
+}
+
+/* ===== الأزرار ===== */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:15px 18px;border-radius:14px;border:0;cursor:pointer;
+  font-family:inherit;font-size:1.02rem;font-weight:900;
+y-content:space-between;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;}  touch-action:manipulation;transition:transform .15s, box-shadow .2s, background .2s;
+}
+.btn-primary{
+  background:linear-gradient(135deg,#dcbd7e,#c5a059 45%,#b38b4d);
+  color:#241b09;
+  box-shadow:0 10px 24px rgba(179,139,77,.45);
+}
+.btn-primary:active{transform:translateY(1px);}
+.btn-ghost{background:#fff;color:var(--navy);border:1.6px solid #e3dccd;box-shadow:none;}
+.btn-ghost:active{transform:translateY(1px);}
+
+/* ===== شاشة الاختبار ===== */
+.topbar{display:flex;justi
+f
+.pill{
+  font-size:.76rem;font-weight:800;border-radius:999px;padding:7px 13px;
+  max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  background:#f2ecdf;color:#6b5525;
+}
+.pill.name{background:#eaf1fb;color:#1c3f7a;max-width:60%;}
+.progress{height:9px;background:#efe7d7;border-radius:999px;overflow:hidden;margin-bottom:20px;}
+.progress-fill{
+  height:100%;width:0;border-radius:999px;
+  background:linear-gradient(90deg,#1c3f7a,#c5a059);
+  transition:width .4s cubic-bezier(.4,0,.2,1);
+}
+.q-text{
+  direction:ltr;text-align:left;
+  font-size:1.1rem;font-weight:800;color:var(--navy);line-height:1.55;
+abled):active{transform:translateY(0);}
+.option:di  margin:0 0 18px;padding:16px;border-radius:14px;
+  background:linear-gradient(180deg,#f8f3e8,#fdfaf3);
+  border-inline-start:5px solid var(--gold);
+  word-break:break-word;
+}
+.options{display:grid;gap:10px;}
+.option{
+  display:flex;align-items:center;gap:12px;width:100%;text-align:start;
+  padding:14px 15px;border-radius:14px;border:1.6px solid #e3dccd;background:#fff;color:var(--ink);
+  font-family:inherit;font-size:1.02rem;font-weight:700;cursor:pointer;
+  transition:.18s;touch-action:manipulation;
+}
+.option:not(:disabled):hover{border-color:var(--gold);background:#fffdf7;transform:translateY(-1px);}
+.option:not(:di
+ssabled{cursor:default;}
+.badge{
+  flex:0 0 28px;height:28px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+  background:#f0e9d9;color:#8a6d33;font-weight:900;font-size:.84rem;
+}
+.opt-text{direction:ltr;flex:1;text-align:left;word-break:break-word;}
+.option.correct{background:#e9f8ef;border-color:var(--green);color:#136b3a;}
+.option.correct .badge{background:var(--green);color:#fff;}
+.option.wrong{background:#fdecec;border-color:var(--red);color:#a02222;}
+.option.wrong .badge{background:var(--red);color:#fff;}
+
+.feedback{margin-top:16px;border-radius:14px;padding:14px 16px;font-size:.9rem;line-height:1.85;font-weight:700;animation:fadeUp .3s ease;}
+ ===== */
+.certificate{
+  position:relative;
+  background:
+    radial-grad.feedback.ok{background:#e9f8ef;border:1.5px solid #9fdcb8;color:#136b3a;}
+.feedback.no{background:#fdecec;border:1.5px solid #f0b4b4;color:#8f1f1f;}
+.fb-head{font-weight:900;margin-bottom:6px;font-size:.95rem;}
+.fb-correct{margin-bottom:5px;}
+.fb-correct b{direction:ltr;display:inline-block;}
+
+/* ===== شاشة النتيجة ===== */
+.score-big{
+  font-size:3rem;font-weight:900;text-align:center;line-height:1.1;margin:6px 0 2px;
+  background:linear-gradient(135deg,#1c3f7a,#c5a059);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.fail-msg{text-align:center;color:var(--muted);font-size:.92rem;font-weight:700;margin:8px 0 22px;line-height:1.9;}
+
+/* ===== الشهاد
+ةient(700px 300px at 50% -20%, rgba(197,160,89,.20), transparent 70%),
+    linear-gradient(160deg,#fffdf8 0%,#fbf4e6 100%);
+  border:2px solid var(--gold);
+  border-radius:20px;
+  padding:9px;
+  box-shadow:0 18px 40px rgba(0,0,0,.22);
+}
+.cert-frame{
+  border:1px solid rgba(179,139,77,.55);
+  border-radius:14px;
+  padding:22px 14px 16px;
+  text-align:center;
+}
+.cert-title{margin:8px 0 0;font-size:1.3rem;font-weight:900;color:var(--navy);letter-spacing:.4px;}
+.cert-title small{display:block;font-size:.66rem;letter-spacing:3px;color:var(--gold-d);font-weight:800;margin-top:3px;}
+.cert-body{
+  margin:14px auto 0;max-width:560px;font-size:.98rem;line-height:2.15;color:#243450;font-weight:700;
+}
+.cert-name{
+  display:inline-block;margin:0 6px;padding:2px 14px;
+ht:118px;border-radius:50%;
+  border:3px double va  font-weight:900;color:#0d1b33;font-size:1.08rem;
+  border-bottom:2px dotted var(--gold);background:rgba(197,160,89,.14);border-radius:8px;
+}
+.cert-motivation{
+  margin:16px auto 0;max-width:520px;font-size:.85rem;line-height:1.95;color:#7a6231;font-weight:800;
+  background:rgba(197,160,89,.13);border:1px dashed rgba(179,139,77,.6);
+  border-radius:12px;padding:10px 14px;
+}
+.cert-actions-row{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  margin-top:24px;padding:0 4px;flex-wrap:wrap;
+}
+.cert-sign{text-align:center;min-width:120px;}
+.sign-label{display:block;font-size:.71rem;color:var(--muted);font-weight:800;}
+.sign-name{display:block;font-size:1rem;font-weight:900;color:var(--navy);margin-top:5px;}
+.stamp{
+  width:118px;hei
+gr(--gold-d);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transform:rotate(-11deg);color:#8a6d33;text-align:center;
+  background:radial-gradient(circle at 50% 50%, rgba(197,160,89,.16), rgba(197,160,89,.03) 72%);
+  box-shadow:inset 0 0 0 3px rgba(197,160,89,.28);
+}
+.stamp-top{font-size:.55rem;font-weight:900;letter-spacing:1.5px;margin-bottom:3px;opacity:.95;}
+.stamp-center{font-size:.65rem;font-weight:900;line-height:1.35;padding:0 10px;}
+.cert-reminder{
+  margin:20px auto 0;max-width:560px;font-size:.79rem;color:#4a5a72;font-weight:800;line-height:1.9;
+  border-top:1px dashed rgba(179,139,77,.5);padding-top:12px;
+}
+.cert-rights{margin:14px 0 0;font-size:.69rem;color:#9aa3b2;font-weight:800;letter-spacing:.2px;}
+
+.cert-tools{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}
+ <div class="card">
+      <div cl.cert-tools .btn{flex:1 1 160px;}
+
+/* ===== الطباعة ===== */
+@media print{
+  body{background:#fff !important;padding:0 !important;display:block !important;}
+  .app{max-width:100% !important;margin:0 !important;}
+  .no-print{display:none !important;}
+  .card{box-shadow:none !important;padding:0 !important;background:#fff !important;border-radius:0 !important;}
+  .card::before{display:none !important;}
+  .certificate{box-shadow:none !important;}
+  .screen{display:none !important;}
+  .screen.active{display:block !important;}
+  @page{margin:12mm;}
+}
+
+@media (max-width:400px){
+  .card{padding:22px 15px;}
+  .q-text{font-size:1rem;}
+  .cert-actions-row{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ شاشة البداية ============ -->
+  <section id="startScreen" class="screen active">
+  
+ ass="brand">
+        <div style="font-family: sans-serif; font-weight: 900; font-size: 2rem; color: #c5a059; letter-spacing: -2px; text-shadow: 2px 2px 0 #b38b4d, 4px 4px 5px rgba(0,0,0,0.3); transform: skewX(-5deg);">AYK</div>
+      </div>
+
+      <h1 class="h1">اختبار الإتقان — English</h1>
+      <p class="sub">We Can 1 · الفترة الأولى · Unit 1 – Unit 5</p>
+
+      <div class="field">
+        <label for="studentName">اسم الطالب/ة الثلاثي <span style="color:#d33b3b">*</span></label>
+        <input id="studentName" type="text" inputmode="text" autocomplete="name"
+               placeholder="مثال: محمد أحمد العبدلي" maxlength="60" />
+        <div class="error-msg" id="nameError" hidden></div>
+      </div>
+
+      <ul class="rules">
+        <li>📝 ٢٢ سؤالاً من نوع الاختيار من متعدد.</li>
+        <li>🔀 يتم خلط ترتيب الأسئلة والخيارات عشوائياً.</li>
+        <li>🚫 لا يمكن الرجوع إلى سؤال سابق.</li>
+v>
+  </section>
+
+  <!-- ============ شاشة النتيجة / الشهادة =        <li>⚡ تغذية راجعة فورية بعد كل إجابة مع شرح نصي.</li>
+        <li>🏅 شهادة إتقان تُمنح عند الحصول على 100%.</li>
+      </ul>
+
+      <button class="btn btn-primary" id="startBtn" type="button">ابدأ الاختبار ✨</button>
+    </div>
+  </section>
+
+  <!-- ============ شاشة الاختبار ============ -->
+  <section id="quizScreen" class="screen">
+    <div class="card">
+      <div class="topbar">
+        <div class="pill name" id="studentPill">👤</div>
+        <div class="pill" id="counterPill">السؤال 1</div>
+      </div>
+
+      <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+
+      <p class="q-text" id="questionText" dir="ltr"></p>
+
+      <div class="options" id="optionsWrap"></div>
+
+      <div class="feedback" id="feedback" hidden></div>
+
+      <button class="btn btn-primary" id="nextBtn" type="button" hidden style="margin-top:16px;">السؤال التالي ⬅</button>
+    </d
+i=========== -->
+  <section id="resultScreen" class="screen">
+    <div class="card">
+
+      <!-- لم يكتمل الإتقان -->
+      <div id="failBlock" hidden>
+        <h2 class="h1">النتيجة</h2>
+        <div class="score-big" id="scoreText">0%</div>
+        <p class="fail-msg" id="failMsg"></p>
+        <button class="btn btn-primary" id="retryBtn" type="button">إعادة المحاولة 🔄</button>
+      </div>
+
+      <!-- شهادة الإتقان -->
+      <div id="certBlock" hidden>
+        <div class="certificate">
+          <div class="cert-frame">
+
+            <!-- الترويسة: لوجو المنصة فقط -->
+            <div style="font-family: sans-serif; font-weight: 900; font-size: 2rem; color: #c5a059; letter-spacing: -2px; text-shadow: 2px 2px 0 #b38b4d, 4px 4px 5px rgba(0,0,0,0.3); transform: skewX(-5deg);">AYK</div>
+
+            <h2 class="cert-title">
+              شهادة إتقان
+              <small>CERTIFICATE OF MASTERY</small>
+            </h2>
+
+            <p class="cert-body">
+              تشهد شعبة اللغة الإنجليزية في العالمية أن الطالب/ة:
+class="cert-tools no-print">
+          <button class="btn b              <span class="cert-name" id="certName"></span>
+              قد أتم بنجاح وبدرجة كاملة (100%) متطلبات الإتقان في مادة انجليزي لـ الفترة الاولى.
+            </p>
+
+            <p class="cert-motivation">
+              لأن الإتقان غاية... والتميز رحلة. شهادة استحقها بعد إثبات جدارته العلمية.
+            </p>
+
+            <div class="cert-actions-row">
+              <div class="cert-sign">
+                <span class="sign-label">توقيع المعلم</span>
+                <span class="sign-name">سحر العبدلي</span>
+              </div>
+
+              <div class="stamp">
+                <div class="stamp-top">العالمية</div>
+                <div class="stamp-center">شعبة اللغة الإنجليزية</div>
+              </div>
+            </div>
+
+            <p class="cert-reminder">
+              📸 تذكير: يُرجى إرسال لقطة شاشة (Screenshot) لهذه الشهادة إلى المعلم لاحتساب درجة المشاركة.
+            </p>
+
+            <p class="cert-rights">صادرة عبر منصة جسر | إشراف: سحر العبدلي</p>
+
+          </div>
+        </div>
+
+        <div
+ tn-primary" type="button" onclick="window.print()">🖨️ طباعة / حفظ الشهادة</button>
+          <button class="btn btn-ghost" id="restartBtn" type="button">اختبار جديد</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* =========================================================
+     بنك الأسئلة (اختيار من متعدد فقط)
+     ========================================================= */
+  const QUESTIONS = [
+    { q: 'Complete the missing letter:  r __ bot',
+      opts: ['o', 'a', 'e', 'i'], a: 'o',
+      ex: 'الكلمة الصحيحة هي robot (رجل آلي)، والحرف الناقص هو o.' },
+
+    { q: 'Complete the missing letter:  b __ ar',
+      opts: ['e', 'a', 'o', 'u'], a: 'e',
+      ex: 'الكلمة الصحيحة هي bear (دب)، والحرف الناقص هو e.' },
+
+    { q: 'Which word is a toy?',
+      opts: ['robot', 'pizza', 'cow', 'cloudy'], a: 'robot',
+      ex: 'robot (رجل آلي) من الألعاب Toys، أما pizza طعام و cow حيوان و cloudy وصف للطقس.' },
+
+    { q: '"How many do you have?"   —   "I have ____."',
+      opts: ['two', 'yes', 'no', 'soup'], a: 'two',
+      ex: 'السؤال How many? يسأل عن العدد، لذلك تكون الإجابة برقم: I have two.' },
+
+    { q: 'Complete the missing letter:  __ CTOPUS',
+      opts: ['O', 'A', 'E', 'U'], a: 'O',
+      ex: 'الكلمة هي OCTOPUS (أخطبوط)، وتبدأ بحرف O.' },
+
+    { q: 'Complete the missing letter:  __ ARROT',
+      opts: ['C', 'K', 'S', 'T'], a: 'C',
+      ex: 'الكلمة هي CARROT (جزر)، وتبدأ بحرف C.' },
+
+    { q: '"Do you like pizza?"   —   "____"',
+      opts: ['Yes, I do.', "No, I don't.", 'I have two.', "It's sunny."], a: 'Yes, I do.',
+      ex: 'السؤال يبدأ بـ Do you like…? والإجابة تكون: Yes, I do. أو No, I don\u2019t.' },
+
+    { q: '"Do you like macaroni?"   —   "____"   (negative answer)',
+      opts: ["No, I don't.", 'Yes, I do.', 'Yes, it is.', 'I like it.'], a: "No, I don't.",
+      ex: 'الإجابة المنفية الصحيحة هي: No, I don\u2019t.' },
+
+    { q: 'Which word is food?',
+      opts: ['soup', 'duck', 'kite', 'happy'], a: 'soup',
+      ex: 'soup (شوربة) من الطعام Food، أما duck حيوان و kite لعبة و happy شعور.' },
+
+    { q: 'Complete the missing letter:  __ UCK',
+      opts: ['D', 'B', 'L', 'M'], a: 'D',
+      ex: 'الكلمة هي DUCK (بطة)، وتبدأ بحرف D.' },
+
+    { q: 'Complete the missing letter:  __ IGER',
+      opts: ['T', 'L', 'R', 'F'], a: 'T',
+      ex
+: 'الكلمة هي TIGER (نمر)، وتبدأ بحرف T.' },
+
+    { q: 'Complete the missing letter:  __ ORSE',
+      opts: ['H', 'C', 'P', 'W'], a: 'H',
+      ex: 'الكلمة هي HORSE (حصان)، وتبدأ بحرف H.' },
+
+    { q: 'Choose the correct word for the number:   14',
+      opts: ['fourteen', 'four', 'forty', 'seventeen'], a: 'fourteen',
+      ex: 'العدد 14 يُكتب fourteen، أما forty فهو 40.' },
+
+    { q: 'Unscramble the word:   n  u  s  n  y',
+      opts: ['SUNNY', 'SNOWY', 'RAINY', 'WINDY'], a: 'SUNNY',
+      ex: 'ترتيب الحروف يعطي SUNNY (مشمس).' },
+
+    { q: 'Unscramble the word:   l  o  u  c  d  y',
+      opts: ['CLOUDY', 'COLDLY', 'CLOUD', 'CANDY'], a: 'CLOUDY',
+      ex: 'ترتيب الحروف يعطي CLOUDY (غائم).' },
+
+    { q: 'Unscramble the word:   a  i  r  y  n',
+      opts: ['RAINY', 'RAIN', 'AIRY', 'RANY'], a: 'RAINY',
+      ex: 'ترتيب الحروف يعطي RAINY (ممطر).' },
+
+    { q: 'Complete the missing letter:  __ OLF',
+      opts: ['W', 'V', 'R', 'G'], a: 'W',
+      ex: 'الكلمة هي WOLF (ذئب)، وتبدأ بحرف W.' },
+
+    { q: 'Complete the missing letter:  __ EBRA',
+      opts: ['Z', 'S', 'X', 'B'], a: 'Z',
+      ex: 'الكلمة هي ZEBRA (حمار وحشي)، وتبدأ بحرف Z.' },
+
+    { q: 'Complete the missing letter:  FO __',
+;', '<': '&lt;', '>': '&gt;', '"': '&quot      opts: ['X', 'S', 'K', 'Z'], a: 'X',
+      ex: 'الكلمة هي FOX (ثعلب)، وتنتهي بحرف X.' },
+
+    { q: 'Which day comes after Tuesday?',
+      opts: ['Wednesday', 'Monday', 'Friday', 'Sunday'], a: 'Wednesday',
+      ex: 'ترتيب الأيام: Sunday – Monday – Tuesday – Wednesday … لذا يأتي بعد الثلاثاء الأربعاء Wednesday.' },
+
+    { q: '"I want water. I am ____."',
+      opts: ['thirsty', 'hungry', 'happy', 'sad'], a: 'thirsty',
+      ex: 'عند العطش نقول I am thirsty (أنا عطشان).' },
+
+    { q: '"I got a gift. I am ____."',
+      opts: ['happy', 'sad', 'thirsty', 'hungry'], a: 'happy',
+      ex: 'عند الشعور بالفرح نقول I am happy (أنا سعيد).' }
+  ];
+
+  /* =========================================================
+     أدوات مساعدة
+     ========================================================= */
+  const el = function (id) { return document.getElementById(id); };
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, function (c) {
+      return { '&': '&am
+p;', "'": '&#39;' }[c];
+    });
+  }
+
+  const screens = {
+    start: el('startScreen'),
+    quiz: el('quizScreen'),
+    result: el('resultScreen')
+  };
+
+  function showScreen(key) {
+    Object.keys(screens).forEach(function (k) {
+      screens[k].classList.toggle('active', k === key);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* =========================================================
+     الحالة
+     ========================================================= */
+  const state = { name: '', list: [], i: 0, score: 0, locked: false };
+
+  /* =========================================================
+     شاشة البداية — التحقق من الاسم
+     ========================================================= */
+  const nameInput = el('studentName');
+  const nameError = el('nameError');
+
+  function setError(msg) {
+    if (!msg) {
+      nameError.hidden = true;
+      nameError.textContent = '';
+      nameInput.classList.remove('err');
+      return;
+    }
+    nameError.hidden = false;
+    nameError.textContent = '⚠️ ' + msg;
+    nameInput.classList.add('err');
+  }
+
+  function validateName() {
+    const raw = nameInput.value.trim().replace(/\s+/g, ' ');
+    if (!raw) return { ok: false, msg: 'الرجاء كتابة الاسم الثلاثي قبل البدء.' };
+    state.locked = false;
+
+    el('studentPill').textContent = '👤 ' + state.name;
+
+    s    if (/[0-9]/.test(raw)) return { ok: false, msg: 'الاسم لا يجب أن يحتوي على أرقام.' };
+    const parts = raw.split(' ');
+    if (parts.length < 3) {
+      return { ok: false, msg: 'الرجاء كتابة الاسم الثلاثي كاملاً (الاسم الأول – اسم الأب – اسم العائلة).' };
+    }
+    for (let i = 0; i < parts.length; i++) {
+      if (parts[i].length < 2) {
+        return { ok: false, msg: 'تأكد من كتابة كل جزء من الاسم بشكل صحيح (حرفان على الأقل).' };
+      }
+    }
+    return { ok: true, value: raw };
+  }
+
+  nameInput.addEventListener('input', function () {
+    if (!nameError.hidden) setError('');
+  });
+
+  nameInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); startQuiz(); }
+  });
+
+  el('startBtn').addEventListener('click', startQuiz);
+
+  /* =========================================================
+     بدء الاختبار
+     ========================================================= */
+  function startQuiz() {
+    const v = validateName();
+    if (!v.ok) { setError(v.msg); nameInput.focus(); return; }
+    setError('');
+
+    state.name = v.value;
+    state.list = shuffle(QUESTIONS).map(function (q) {
+      return { q: q.q, a: q.a, ex: q.ex, opts: shuffle(q.opts) };
+    });
+    state.i = 0;
+    state.score = 0;
+howScreen('quiz');
+    renderQuestion();
+  }
+
+  /* =========================================================
+ickedBtn, chose     عرض السؤال
+     ========================================================= */
+  const LETTERS = ['A', 'B', 'C', 'D'];
+
+  function renderQuestion() {
+    state.locked = false;
+    const q = state.list[state.i];
+    const total = state.list.length;
+
+    el('counterPill').textContent = 'السؤال ' + (state.i + 1) + ' من ' + total;
+    el('progressFill').style.width = (state.i / total * 100) + '%';
+
+    const qText = el('questionText');
+    qText.textContent = q.q;
+    qText.setAttribute('dir', 'ltr');
+
+    const wrap = el('optionsWrap');
+    wrap.innerHTML = '';
+
+    q.opts.forEach(function (opt, idx) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'option';
+      btn.dataset.opt = opt;
+      btn.innerHTML =
+        '<span class="badge">' + LETTERS[idx] + '</span>' +
+        '<span class="opt-text" dir="ltr">' + escapeHtml(opt) + '</span>';
+      btn.addEventListener('click', function () { handleAnswer(btn, opt, q); });
+      wrap.appendChild(btn);
+    });
+
+    const fb = el('feedback');
+    fb.hidden = true;
+    fb.className = 'feedback';
+    fb.innerHTML = '';
+
+    el('nextBtn').hidden = true;
+  }
+
+  /* =========================================================
+     معالجة الإجابة — تغذية راجعة فورية
+     ========================================================= */
+  function handleAnswer(c
+ln, q) {
+    if (state.locked) return;
+    state.locked = true;
+
+    const isCorrect = (chosen === q.a);
+    if (isCorrect) state.score++;
+
+    const all = document.querySelectorAll('#optionsWrap .option');
+    Array.prototype.forEach.call(all, function (b) {
+      b.disabled = true;
+      if (b.dataset.opt === q.a) b.classList.add('correct');
+    });
+    if (!isCorrect) clickedBtn.classList.add('wrong');
+
+    const fb = el('feedback');
+    fb.hidden = false;
+    fb.className = 'feedback ' + (isCorrect ? 'ok' : 'no');
+
+    let html = '<div class="fb-head">' +
+      (isCorrect ? '✅ إجابة صحيحة — أحسنت!' : '❌ إجابة غير صحيحة') +
+      '</div><div class="fb-body">';
+
+    if (!isCorrect) {
+      html += '<div class="fb-correct">الإجابة الصحيحة: <b dir="ltr">' +
+              escapeHtml(q.a) + '</b></div>';
+    }
+    html += '<div>' + escapeHtml(q.ex) + '</div></div>';
+    fb.innerHTML = html;
+
+    el('progressFill').style.width = ((state.i + 1) / state.list.length * 100) + '%';
+
+    const nextBtn = el('nextBtn');
+    nextBtn.hidden = false;
+    nextBtn.textContent = (state.i === state.list.length - 1)
+      ? 'عرض النتيجة 🏁'
+      : 'السؤال التالي ⬅';
+  }
+
+  /* =========================================================
+     الانتقال للسؤال التالي (بدون رجوع)
+     ========================================================= */
+  el('nextBtn').addEventListener('click', function () {
+etError('');
+    nameInput.value = '';
+       if (state.i < state.list.length - 1) {
+      state.i++;
+      renderQuestion();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      showResult();
+    }
+  });
+
+  /* =========================================================
+     النتيجة / الشهادة
+     ========================================================= */
+  function showResult() {
+    const total = state.list.length;
+    const percent = Math.round((state.score / total) * 100);
+
+    el('progressFill').style.width = '100%';
+    showScreen('result');
+
+    if (percent === 100) {
+      el('certName').textContent = state.name;
+      el('failBlock').hidden = true;
+      el('certBlock').hidden = false;
+    } else {
+      el('scoreText').textContent = percent + '%';
+      el('failMsg').innerHTML =
+        'أجبت بشكل صحيح على <b>' + state.score + '</b> من <b>' + total + '</b> سؤالاً.<br>' +
+        'شهادة الإتقان تُمنح فقط عند الحصول على 100%.<br>حاول مرة أخرى — أنت قادر! 💪';
+      el('certBlock').hidden = true;
+      el('failBlock').hidden = false;
+    }
+  }
+
+  /* =========================================================
+     إعادة المحاولة / اختبار جديد
+     ========================================================= */
+  function restart() {
+    state.i = 0;
+    state.score = 0;
+    state.locked = false;
+    el('certBlock').hidden = true;
+    el('failBlock').hidden = true;
+    showScreen('start');
+    
+s nameInput.focus();
+  }
+
+  el('retryBtn').addEventListener('click', function () {
+    state.list = shuffle(QUESTIONS).map(function (q) {
+      return { q: q.q, a: q.a, ex: q.ex, opts: shuffle(q.opts) };
+    });
+    state.i = 0;
+    state.score = 0;
+    state.locked = false;
+    el('failBlock').hidden = true;
+    el('certBlock').hidden = true;
+    showScreen('quiz');
+    renderQuestion();
+  });
+
+  el('restartBtn').addEventListener('click', restart);
+
+})();
+</script>
+</body>
+</html>
